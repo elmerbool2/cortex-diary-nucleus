@@ -2,7 +2,12 @@
 using CQRSlite.Routing;
 using Nancy;
 using Nancy.TinyIoc;
+using org.neurul.Common.Http;
+using works.ei8.Cortex.Diary.Nucleus.Application;
+using works.ei8.Cortex.Diary.Nucleus.Application.Neurons;
 using works.ei8.Cortex.Diary.Nucleus.Application.Notification;
+using works.ei8.Cortex.Diary.Nucleus.Port.Adapter.IO.Process.Services;
+using works.ei8.Cortex.Graph.Client;
 
 namespace works.ei8.Cortex.Diary.Nucleus.Port.Adapter.Out.Api
 {
@@ -16,10 +21,10 @@ namespace works.ei8.Cortex.Diary.Nucleus.Port.Adapter.Out.Api
         {
             base.ConfigureRequestContainer(container, context);
 
-            var ipb = new Router();
-            // TODO: container.Register<IEventPublisher, Router>(ipb);
-            //container.Register<IEventSerializer, EventSerializer>();
-            //container.Register<IEventSourceFactory, EventSourceFactory>();
+            container.Register<IRequestProvider, RequestProvider>();
+            container.Register<ISettingsService, SettingsService>();
+            container.Register<INeuronGraphQueryClient, HttpNeuronGraphQueryClient>();
+            container.Register<INeuronQueryService, NeuronQueryService>();
             container.Register<INotificationApplicationService, NotificationApplicationService>();
         }
     }

@@ -26,7 +26,6 @@ namespace works.ei8.Cortex.Diary.Nucleus.Port.Adapter.In.Api
             container.Register<ICommandSender, Router>(ipb);
             container.Register<IHandlerRegistrar, Router>(ipb);
             container.Register<IRequestProvider, RequestProvider>();
-            container.Register<ITokenService, EmptyTokenService>();
             container.Register<INeuronClient, HttpNeuronClient>();
             container.Register<ISettingsService, SettingsService>();
             container.Register<NeuronCommandHandlers>();

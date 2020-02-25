@@ -8,5 +8,7 @@ namespace works.ei8.Cortex.Diary.Nucleus.Application
     {
         string CortexInBaseUrl { get; }
         string CortexOutBaseUrl { get; }
+
+        string CortexGraphOutBaseUrl { get; }
     }
 }
