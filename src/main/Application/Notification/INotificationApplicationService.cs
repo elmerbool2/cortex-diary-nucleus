@@ -1,12 +1,11 @@
-﻿// TODO: using org.neurul.Common.Events;
+﻿using System.Threading;
 using System.Threading.Tasks;
+using works.ei8.Cortex.Diary.Common;
 
 namespace works.ei8.Cortex.Diary.Nucleus.Application.Notification
 {
     public interface INotificationApplicationService
     {
-        // TODO: Task<NotificationLog> GetCurrentNotificationLog(string storeId);
-
-        //Task<NotificationLog> GetNotificationLog(string storeId, string notificationLogId);
+        Task<NotificationLog> GetNotificationLog(string storeId, string notificationLogId, CancellationToken token = default(CancellationToken));
     }
 }

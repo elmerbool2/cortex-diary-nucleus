@@ -11,5 +11,7 @@ namespace works.ei8.Cortex.Diary.Nucleus.Port.Adapter.IO.Process.Services
         public string CortexOutBaseUrl => Environment.GetEnvironmentVariable(EnvironmentVariableKeys.CortexOutBaseUrl);
 
         public string CortexGraphOutBaseUrl => Environment.GetEnvironmentVariable(EnvironmentVariableKeys.CortexGraphOutBaseUrl);
+
+        public string EventSourcingOutBaseUrl => Environment.GetEnvironmentVariable(EnvironmentVariableKeys.EventSourcingOutBaseUrl);
     }
 }

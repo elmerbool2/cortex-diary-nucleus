@@ -12,40 +12,39 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 // 
-// Modifications copyright(C) 2017 ei8/Elmer Bool
+// Modifications copyright(C) 2020 ei8/Elmer Bool
 
 using org.neurul.Common.Domain.Model;
-// TODO: using org.neurul.Common.Events;
+using org.neurul.Common.Http;
 using System;
+using System.Threading;
 using System.Threading.Tasks;
+using works.ei8.Cortex.Diary.Common;
+using works.ei8.EventSourcing.Client;
+using works.ei8.EventSourcing.Client.Out;
 
 namespace works.ei8.Cortex.Diary.Nucleus.Application.Notification
 {
     public class NotificationApplicationService : INotificationApplicationService
     {
-        // TODO: public NotificationApplicationService(IEventSourceFactory eventSourceFactory)
-        //{
-        //    AssertionConcern.AssertArgumentNotNull(eventSourceFactory, nameof(eventSourceFactory));
-        //    this.eventSourceFactory = eventSourceFactory;
-        //}
+        public NotificationApplicationService(INotificationClient notificationClient, ISettingsService settingsService)
+        {
+            AssertionConcern.AssertArgumentNotNull(notificationClient, nameof(notificationClient));
+            this.notificationClient = notificationClient;
+            this.settingsService = settingsService;
+        }
 
-        //readonly IEventSourceFactory eventSourceFactory;
+        private readonly INotificationClient notificationClient;
+        private readonly ISettingsService settingsService;
 
-        //public async Task<NotificationLog> GetCurrentNotificationLog(string storeId)
-        //{
-        //    var eventSource = this.eventSourceFactory.CreateEventSource(storeId);
-        //    // TODO: check if user has permission to access store
-        //    return await new NotificationLogFactory(eventSource.EventStore).CreateCurrentNotificationLog();
-        //}
-
-        //public async Task<NotificationLog> GetNotificationLog(string storeId, string notificationLogId)
-        //{
-        //    if (!NotificationLogId.TryParse(notificationLogId, out NotificationLogId logId))
-        //        throw new FormatException($"Specified {nameof(notificationLogId)} value of '{notificationLogId}' was not in the expected format.");
-
-        //    // TODO: check if user has permission to access store
-        //    var eventSource = this.eventSourceFactory.CreateEventSource(storeId);
-        //    return await new NotificationLogFactory(eventSource.EventStore).CreateNotificationLog(logId);
-        //}
+        public async Task<NotificationLog> GetNotificationLog(string storeId, string notificationLogId, CancellationToken token = default(CancellationToken))
+        {
+            return (await this.notificationClient.GetNotificationLog(
+                    Helper.UrlCombine(this.settingsService.EventSourcingOutBaseUrl, storeId) + "/",
+                    notificationLogId, 
+                    token
+                    )
+                ).ToInternalType();
+        }
     }
 }
