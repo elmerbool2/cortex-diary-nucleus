@@ -8,6 +8,7 @@ using System;
 using works.ei8.Cortex.Diary.Nucleus.Application;
 using works.ei8.Cortex.Diary.Nucleus.Application.Neurons;
 using works.ei8.Cortex.Diary.Nucleus.Port.Adapter.IO.Process.Services;
+using works.ei8.Data.Tag.Client.In;
 
 namespace works.ei8.Cortex.Diary.Nucleus.Port.Adapter.In.Api
 {
@@ -27,6 +28,7 @@ namespace works.ei8.Cortex.Diary.Nucleus.Port.Adapter.In.Api
             container.Register<IHandlerRegistrar, Router>(ipb);
             container.Register<IRequestProvider, RequestProvider>();
             container.Register<INeuronClient, HttpNeuronClient>();
+            container.Register<ITagClient, HttpTagClient>();
             container.Register<ISettingsService, SettingsService>();
             container.Register<NeuronCommandHandlers>();
 

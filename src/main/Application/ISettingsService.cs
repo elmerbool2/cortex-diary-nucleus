@@ -10,5 +10,7 @@ namespace works.ei8.Cortex.Diary.Nucleus.Application
         string CortexOutBaseUrl { get; }
         string CortexGraphOutBaseUrl { get; }
         string EventSourcingOutBaseUrl { get; }
+        string TagInBaseUrl { get; }
+        string TagOutBaseUrl { get; }
     }
 }
