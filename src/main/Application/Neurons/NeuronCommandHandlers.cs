@@ -62,27 +62,16 @@ namespace works.ei8.Cortex.Diary.Nucleus.Application.Neurons
 
         public async Task Handle(ChangeNeuronTag message, CancellationToken token = default(CancellationToken))
         {
-            // TODO: AssertionConcern.AssertArgumentNotNull(message, nameof(message));
+            AssertionConcern.AssertArgumentNotNull(message, nameof(message));
 
-            //var eventSource = this.eventSourceFactory.CreateEventSource(message.AvatarId);
-
-            //await this.userRepository.Initialize(message.AvatarId);
-            //await this.layerPermitRepository.Initialize(message.AvatarId);
-
-            //// TODO: Add TDD test
-            //var author = await NeuronCommandHandlers.GetValidatedAuthorUser(message.SubjectId, eventSource.Session, this.userRepository, this.layerPermitRepository, token);
-            //Neuron neuron = await eventSource.Session.Get<Neuron>(message.Id, nameof(neuron), message.ExpectedVersion, token);
-            //Neuron layer = await eventSource.Session.GetOrDefaultIfGuidEmpty(
-            //        neuron.LayerId,
-            //        nameof(layer),
-            //        Neuron.RootLayerNeuron,
-            //        cancellationToken: token
-            //        );
-            //neuron.ChangeTag(message.NewTag, layer, author);
-
-            //await eventSource.Session.Commit(token);
-
-            await Task.CompletedTask;
+            await this.tagClient.ChangeTag(
+                Helper.UrlCombine(this.settingsService.TagInBaseUrl, message.AvatarId) + "/",
+                message.Id.ToString(),
+                message.NewTag,
+                message.ExpectedVersion,
+                message.AuthorId.ToString(),
+                token
+                );
         }
 
         public async Task Handle(DeactivateNeuron message, CancellationToken token = default(CancellationToken))
