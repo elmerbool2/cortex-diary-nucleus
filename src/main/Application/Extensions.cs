@@ -48,8 +48,8 @@ namespace works.ei8.Cortex.Diary.Nucleus.Application
                 Version = cn.Version,
                 AuthorId = cn.AuthorId,
                 AuthorTag = cn.AuthorTag,
-                LayerId = cn.LayerId,
-                LayerTag = cn.LayerTag,
+                RegionId = cn.RegionId,
+                RegionTag = cn.RegionTag,
                 Timestamp = cn.Timestamp,
                 Errors = cn.Errors
             });

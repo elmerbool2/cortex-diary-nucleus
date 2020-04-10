@@ -6,6 +6,7 @@ using System;
 using System.Threading;
 using System.Threading.Tasks;
 using works.ei8.Cortex.Diary.Nucleus.Application.Neurons.Commands;
+using works.ei8.Data.Aggregate.Client.In;
 using works.ei8.Data.Tag.Client.In;
 
 namespace works.ei8.Cortex.Diary.Nucleus.Application.Neurons
@@ -17,16 +18,19 @@ namespace works.ei8.Cortex.Diary.Nucleus.Application.Neurons
     {
         private readonly INeuronClient neuronClient;
         private readonly ITagClient tagClient;
+        private readonly IAggregateClient aggregateClient;
         private readonly ISettingsService settingsService;
 
-        public NeuronCommandHandlers(INeuronClient neuronClient, ITagClient tagClient, ISettingsService settingsService)
+        public NeuronCommandHandlers(INeuronClient neuronClient, ITagClient tagClient, IAggregateClient aggregateClient, ISettingsService settingsService)
         {
             AssertionConcern.AssertArgumentNotNull(neuronClient, nameof(neuronClient));
             AssertionConcern.AssertArgumentNotNull(tagClient, nameof(tagClient));
+            AssertionConcern.AssertArgumentNotNull(aggregateClient, nameof(aggregateClient));
             AssertionConcern.AssertArgumentNotNull(settingsService, nameof(settingsService));
 
             this.neuronClient = neuronClient;
             this.tagClient = tagClient;
+            this.aggregateClient = aggregateClient;
             this.settingsService = settingsService;
         }
 
@@ -34,6 +38,7 @@ namespace works.ei8.Cortex.Diary.Nucleus.Application.Neurons
         {
             AssertionConcern.AssertArgumentNotNull(message, nameof(message));
 
+            //TODO: transfer all of this to Domain.Model, especially parse of Guid for region/aggregate
             int expectedVersion = 0;
             await this.neuronClient.CreateNeuron(
                 Helper.UrlCombine(this.settingsService.CortexInBaseUrl, message.AvatarId) + "/", 
@@ -56,7 +61,15 @@ namespace works.ei8.Cortex.Diary.Nucleus.Application.Neurons
             {
                 // increment expected
                 expectedVersion++;
-                // TODO: assign region value to id
+                // assign region value to id
+                await this.aggregateClient.ChangeAggregate(
+                    Helper.UrlCombine(this.settingsService.AggregateInBaseUrl, message.AvatarId) + "/",
+                    message.Id.ToString(),
+                    message.RegionId.ToString(),
+                    expectedVersion,
+                    message.AuthorId.ToString(),
+                    token
+                    );
             }
         }
 
