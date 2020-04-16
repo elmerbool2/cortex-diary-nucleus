@@ -6,6 +6,6 @@ namespace works.ei8.Cortex.Diary.Nucleus.Application.Notification
 {
     public interface INotificationApplicationService
     {
-        Task<NotificationLog> GetNotificationLog(string storeId, string notificationLogId, CancellationToken token = default(CancellationToken));
+        Task<NotificationLog> GetNotificationLog(string notificationLogId, CancellationToken token = default(CancellationToken));
     }
 }

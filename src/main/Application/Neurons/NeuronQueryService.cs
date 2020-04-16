@@ -25,11 +25,11 @@ namespace works.ei8.Cortex.Diary.Nucleus.Application.Neurons
             this.settingsService = settingsService;            
         }
 
-        public async Task<IEnumerable<Neuron>> GetNeurons(string avatarId, string centralId = default(string), RelativeType type = RelativeType.NotSet, NeuronQuery neuronQuery = null, 
+        public async Task<IEnumerable<Neuron>> GetNeurons(string centralId = default(string), RelativeType type = RelativeType.NotSet, NeuronQuery neuronQuery = null, 
             int? limit = 1000, CancellationToken token = default(CancellationToken))
         {
             var result = await this.graphQueryClient.GetNeurons(
-                Helper.UrlCombine(this.settingsService.CortexGraphOutBaseUrl, avatarId) + "/",
+                this.settingsService.CortexGraphOutBaseUrl + "/",
                 centralId,
                 type.ToExternalType(),
                 neuronQuery.ToExternalType(),
@@ -44,10 +44,10 @@ namespace works.ei8.Cortex.Diary.Nucleus.Application.Neurons
             return (value == null ? (Guid?) null : Guid.Parse(value));
         }
 
-        public async Task<IEnumerable<Neuron>> GetNeuronById(string avatarId, string id, string centralId = default(string), RelativeType type = RelativeType.NotSet, CancellationToken token = default(CancellationToken))
+        public async Task<IEnumerable<Neuron>> GetNeuronById(string id, string centralId = default(string), RelativeType type = RelativeType.NotSet, CancellationToken token = default(CancellationToken))
         {
             var result = await this.graphQueryClient.GetNeuronById(
-                Helper.UrlCombine(this.settingsService.CortexGraphOutBaseUrl, avatarId) + "/",
+                this.settingsService.CortexGraphOutBaseUrl + "/",
                 id,
                 centralId,
                 type.ToExternalType(),

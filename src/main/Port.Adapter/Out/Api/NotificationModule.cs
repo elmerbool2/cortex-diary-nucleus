@@ -11,15 +11,15 @@ namespace works.ei8.Cortex.Diary.Nucleus.Port.Adapter.Out.Api
 {
     public class NotificationModule : NancyModule
     {
-        public NotificationModule(INotificationApplicationService notificationService) : base("/{avatarId}/nuclei/d23/notifications")
+        public NotificationModule(INotificationApplicationService notificationService) : base("/nuclei/d23/notifications")
         {
             this.Get("/", async (parameters) => new TextResponse(JsonConvert.SerializeObject(
-                await notificationService.GetNotificationLog(parameters.avatarId, string.Empty)
+                await notificationService.GetNotificationLog(string.Empty)
                 ))
             );
 
             this.Get("/{logid}", async (parameters) => new TextResponse(JsonConvert.SerializeObject(
-                await notificationService.GetNotificationLog(parameters.avatarId, parameters.logid)
+                await notificationService.GetNotificationLog(parameters.logid)
                 ))
             );
         }

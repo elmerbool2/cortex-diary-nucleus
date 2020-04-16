@@ -41,7 +41,7 @@ namespace works.ei8.Cortex.Diary.Nucleus.Application.Neurons
             //TODO: transfer all of this to Domain.Model, especially parse of Guid for region/aggregate
             int expectedVersion = 0;
             await this.neuronClient.CreateNeuron(
-                Helper.UrlCombine(this.settingsService.CortexInBaseUrl, message.AvatarId) + "/", 
+                this.settingsService.CortexInBaseUrl + "/", 
                 message.Id.ToString(), 
                 message.AuthorId.ToString(), 
                 token
@@ -50,7 +50,7 @@ namespace works.ei8.Cortex.Diary.Nucleus.Application.Neurons
             expectedVersion++;
             // assign tag value
             await this.tagClient.ChangeTag(
-                Helper.UrlCombine(this.settingsService.TagInBaseUrl, message.AvatarId) + "/",
+                this.settingsService.TagInBaseUrl + "/",
                 message.Id.ToString(),
                 message.Tag,
                 expectedVersion,
@@ -63,7 +63,7 @@ namespace works.ei8.Cortex.Diary.Nucleus.Application.Neurons
                 expectedVersion++;
                 // assign region value to id
                 await this.aggregateClient.ChangeAggregate(
-                    Helper.UrlCombine(this.settingsService.AggregateInBaseUrl, message.AvatarId) + "/",
+                    this.settingsService.AggregateInBaseUrl + "/",
                     message.Id.ToString(),
                     message.RegionId.ToString(),
                     expectedVersion,
@@ -78,7 +78,7 @@ namespace works.ei8.Cortex.Diary.Nucleus.Application.Neurons
             AssertionConcern.AssertArgumentNotNull(message, nameof(message));
 
             await this.tagClient.ChangeTag(
-                Helper.UrlCombine(this.settingsService.TagInBaseUrl, message.AvatarId) + "/",
+                this.settingsService.TagInBaseUrl + "/",
                 message.Id.ToString(),
                 message.NewTag,
                 message.ExpectedVersion,

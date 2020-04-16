@@ -15,7 +15,7 @@ namespace works.ei8.Cortex.Diary.Nucleus.Port.Adapter.Out.Api
         private const string DefaultLimit = "1000";
         private const string DefaultType = "NotSet";
 
-        public NeuronModule(INeuronQueryService queryService) : base("/{avatarId}/nuclei/d23/neurons")
+        public NeuronModule(INeuronQueryService queryService) : base("/nuclei/d23/neurons")
         {
             this.Get("", async (parameters) =>
             {
@@ -23,7 +23,7 @@ namespace works.ei8.Cortex.Diary.Nucleus.Port.Adapter.Out.Api
                 {
                     var limit = this.Request.Query["limit"].HasValue ? this.Request.Query["limit"].ToString() : NeuronModule.DefaultLimit;
 
-                    var nv = await queryService.GetNeurons(parameters.avatarId, neuronQuery: NeuronModule.ExtractQuery(this.Request.Query), limit: int.Parse(limit));
+                    var nv = await queryService.GetNeurons(neuronQuery: NeuronModule.ExtractQuery(this.Request.Query), limit: int.Parse(limit));
                     return new TextResponse(JsonConvert.SerializeObject(nv));
                 }
                 );
@@ -34,7 +34,7 @@ namespace works.ei8.Cortex.Diary.Nucleus.Port.Adapter.Out.Api
             {
                 return await NeuronModule.ProcessRequest(async () =>
                 {
-                    var nv = await queryService.GetNeuronById(parameters.avatarId, parameters.neuronid);
+                    var nv = await queryService.GetNeuronById(parameters.neuronid);
                     return new TextResponse(JsonConvert.SerializeObject(nv));
                 }
                 );
@@ -49,7 +49,6 @@ namespace works.ei8.Cortex.Diary.Nucleus.Port.Adapter.Out.Api
                     var limit = this.Request.Query["limit"].HasValue ? this.Request.Query["limit"].ToString() : NeuronModule.DefaultLimit;
 
                     var nv = await queryService.GetNeurons(
-                        parameters.avatarId,
                         parameters.centralid,
                         Enum.Parse(typeof(RelativeType), type),
                         NeuronModule.ExtractQuery(this.Request.Query),
@@ -69,7 +68,6 @@ namespace works.ei8.Cortex.Diary.Nucleus.Port.Adapter.Out.Api
                     var type = this.Request.Query["type"].HasValue ? this.Request.Query["type"].ToString() : NeuronModule.DefaultType;
 
                     var nv = await queryService.GetNeuronById(
-                        parameters.avatarId,
                         parameters.neuronid,
                         parameters.centralid,
                         Enum.Parse(typeof(RelativeType), type)

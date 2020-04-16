@@ -11,7 +11,7 @@ namespace works.ei8.Cortex.Diary.Nucleus.Port.Adapter.In.Api
 {
     public class NeuronModule : NancyModule
     {
-        public NeuronModule(ICommandSender commandSender) : base("/{avatarId}/nuclei/d23/neurons")
+        public NeuronModule(ICommandSender commandSender) : base("/nuclei/d23/neurons")
         {
             this.Post(string.Empty, async (parameters) =>
             {
@@ -22,7 +22,6 @@ namespace works.ei8.Cortex.Diary.Nucleus.Port.Adapter.In.Api
                         (bodyAsObject, bodyAsDictionary, expectedVersion) =>
                         {
                             return new CreateNeuron(
-                                parameters.avatarId,
                                 Guid.Parse(bodyAsObject.Id.ToString()),
                                 bodyAsObject.Tag.ToString(),
                                 Guid.Parse(bodyAsObject.RegionId.ToString()),
@@ -45,7 +44,6 @@ namespace works.ei8.Cortex.Diary.Nucleus.Port.Adapter.In.Api
                         (bodyAsObject, bodyAsDictionary, expectedVersion) =>
                         {
                             return new ChangeNeuronTag(
-                                parameters.avatarId,
                                 Guid.Parse(parameters.neuronId),
                                 bodyAsObject.Tag.ToString(),
                                 Guid.Parse(bodyAsObject.AuthorId.ToString()),
@@ -66,7 +64,6 @@ namespace works.ei8.Cortex.Diary.Nucleus.Port.Adapter.In.Api
                         (bodyAsObject, bodyAsDictionary, expectedVersion) =>
                         {
                             return new DeactivateNeuron(
-                                parameters.avatarId,
                                 Guid.Parse(parameters.neuronId),
                                 Guid.Parse(bodyAsObject.AuthorId.ToString()),
                                 expectedVersion

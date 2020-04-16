@@ -10,7 +10,7 @@ namespace works.ei8.Cortex.Diary.Nucleus.Port.Adapter.In.Api
 {
     public class TerminalModule : NancyModule
     {
-        public TerminalModule(ICommandSender commandSender) : base("/{avatarId}/cortex/terminals")
+        public TerminalModule(ICommandSender commandSender) : base("/nuclei/d23/terminals")
         {
             this.Post(string.Empty, async (parameters) =>
             {
@@ -20,11 +20,10 @@ namespace works.ei8.Cortex.Diary.Nucleus.Port.Adapter.In.Api
                         false,
                         (bodyAsObject, bodyAsDictionary, expectedVersion) =>
                         {
-                            var avatarId = parameters.avatarId;
                             TerminalModule.CreateTerminalFromDynamic(bodyAsObject, out Guid terminalId, out Guid presynapticNeuronId, 
                                 out Guid postsynapticNeuronId, out NeurotransmitterEffect effect, out float strength, out Guid authorId);
 
-                            return new CreateTerminal(avatarId, terminalId, presynapticNeuronId, postsynapticNeuronId, 
+                            return new CreateTerminal(terminalId, presynapticNeuronId, postsynapticNeuronId, 
                                 effect, strength, authorId);
                         },
                         "Id",
@@ -45,7 +44,6 @@ namespace works.ei8.Cortex.Diary.Nucleus.Port.Adapter.In.Api
                         (bodyAsObject, bodyAsDictionary, expectedVersion) =>
                         {
                             return new DeactivateTerminal(
-                                parameters.avatarId,
                                 Guid.Parse(parameters.terminalId),
                                 Guid.Parse(bodyAsObject.AuthorId.ToString()),
                                 expectedVersion

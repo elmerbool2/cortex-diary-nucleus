@@ -37,10 +37,10 @@ namespace works.ei8.Cortex.Diary.Nucleus.Application.Notification
         private readonly INotificationClient notificationClient;
         private readonly ISettingsService settingsService;
 
-        public async Task<NotificationLog> GetNotificationLog(string storeId, string notificationLogId, CancellationToken token = default(CancellationToken))
+        public async Task<NotificationLog> GetNotificationLog(string notificationLogId, CancellationToken token = default(CancellationToken))
         {
             return (await this.notificationClient.GetNotificationLog(
-                    Helper.UrlCombine(this.settingsService.EventSourcingOutBaseUrl, storeId) + "/",
+                    this.settingsService.EventSourcingOutBaseUrl + "/",
                     notificationLogId, 
                     token
                     )

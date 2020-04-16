@@ -7,9 +7,8 @@ namespace works.ei8.Cortex.Diary.Nucleus.Application.Neurons.Commands
 {
     public class CreateNeuron : ICommand
     {
-        public CreateNeuron(string avatarId, Guid id, string tag, Guid regionId, Guid authorId)
+        public CreateNeuron(Guid id, string tag, Guid regionId, Guid authorId)
         {
-            AssertionConcern.AssertArgumentNotNull(avatarId, nameof(avatarId));
             AssertionConcern.AssertArgumentValid(
                 g => g != Guid.Empty,
                 id,
@@ -24,14 +23,11 @@ namespace works.ei8.Cortex.Diary.Nucleus.Application.Neurons.Commands
                 nameof(authorId)
                 );
 
-            this.AvatarId = avatarId;
             this.Id = id;            
             this.Tag = tag;
             this.RegionId = regionId;
             this.AuthorId = authorId;
         }
-
-        public string AvatarId { get; private set; }
 
         public Guid Id { get; private set; }
         
