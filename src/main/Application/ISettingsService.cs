@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace works.ei8.Cortex.Diary.Nucleus.Application
+namespace ei8.Cortex.Diary.Nucleus.Application
 {
     public interface ISettingsService
     {

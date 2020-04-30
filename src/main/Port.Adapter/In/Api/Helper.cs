@@ -11,7 +11,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace works.ei8.Cortex.Diary.Nucleus.Port.Adapter.In.Api
+namespace ei8.Cortex.Diary.Nucleus.Port.Adapter.In.Api
 {
     public static class Helper
     {

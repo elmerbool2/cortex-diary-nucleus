@@ -1,8 +1,8 @@
 ﻿using System;
-using works.ei8.Cortex.Diary.Nucleus.Application;
-using works.ei8.Cortex.Diary.Nucleus.Port.Adapter.Common;
+using ei8.Cortex.Diary.Nucleus.Application;
+using ei8.Cortex.Diary.Nucleus.Port.Adapter.Common;
 
-namespace works.ei8.Cortex.Diary.Nucleus.Port.Adapter.IO.Process.Services
+namespace ei8.Cortex.Diary.Nucleus.Port.Adapter.IO.Process.Services
 {
     public class SettingsService : ISettingsService
     {

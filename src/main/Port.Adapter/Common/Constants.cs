@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace works.ei8.Cortex.Diary.Nucleus.Port.Adapter.Common
+namespace ei8.Cortex.Diary.Nucleus.Port.Adapter.Common
 {
     public struct EnvironmentVariableKeys
     {

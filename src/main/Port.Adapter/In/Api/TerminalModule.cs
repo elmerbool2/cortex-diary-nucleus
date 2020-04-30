@@ -1,12 +1,12 @@
 ﻿using CQRSlite.Commands;
 using Nancy;
 using Nancy.Security;
-using org.neurul.Cortex.Common;
+using neurUL.Cortex.Common;
 using System;
-using works.ei8.Cortex.Diary.Nucleus.Application.Neurons.Commands;
-using works.ei8.Cortex.Diary.Nucleus.Port.Adapter.Common;
+using ei8.Cortex.Diary.Nucleus.Application.Neurons.Commands;
+using ei8.Cortex.Diary.Nucleus.Port.Adapter.Common;
 
-namespace works.ei8.Cortex.Diary.Nucleus.Port.Adapter.In.Api
+namespace ei8.Cortex.Diary.Nucleus.Port.Adapter.In.Api
 {
     public class TerminalModule : NancyModule
     {

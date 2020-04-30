@@ -3,14 +3,14 @@
 //using CQRSlite.Domain;
 //using CQRSlite.Events;
 //using Moq;
-//using org.neurul.Common.Events;
+//using neurUL.Common.Events;
 //using System;
 //using System.Collections.Generic;
 //using System.Linq;
 //using System.Text;
 //using System.Threading.Tasks;
 
-//namespace works.ei8.Cortex.Diary.Nucleus.Application.Test.Neurons
+//namespace ei8.Cortex.Diary.Nucleus.Application.Test.Neurons
 //{
 //    public abstract class ConstructingContext<TAggregate, THandler, TCommand> : ConditionalWhenSpecification<TAggregate, THandler, TCommand> where TAggregate : AggregateRoot where THandler : class where TCommand : ICommand
 //    {

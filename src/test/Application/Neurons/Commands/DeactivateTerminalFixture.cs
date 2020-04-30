@@ -1,5 +1,5 @@
-﻿using org.neurul.Common.Test;
-using works.ei8.Cortex.Diary.Nucleus.Application.Neurons.Commands;
+﻿using neurUL.Common.Test;
+using ei8.Cortex.Diary.Nucleus.Application.Neurons.Commands;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -7,7 +7,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Xunit;
 
-namespace works.ei8.Cortex.Diary.Nucleus.Application.Test.Neurons.Commands.DeactivateTerminalFixture.given
+namespace ei8.Cortex.Diary.Nucleus.Application.Test.Neurons.Commands.DeactivateTerminalFixture.given
 {
     public abstract class ConstructingContext : TestContext<DeactivateTerminal>
     {

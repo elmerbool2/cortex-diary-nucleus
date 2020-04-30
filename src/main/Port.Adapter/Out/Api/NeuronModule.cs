@@ -5,10 +5,10 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using works.ei8.Cortex.Diary.Common;
-using works.ei8.Cortex.Diary.Nucleus.Application.Neurons;
+using ei8.Cortex.Diary.Common;
+using ei8.Cortex.Diary.Nucleus.Application.Neurons;
 
-namespace works.ei8.Cortex.Diary.Nucleus.Port.Adapter.Out.Api
+namespace ei8.Cortex.Diary.Nucleus.Port.Adapter.Out.Api
 {
     public class NeuronModule : NancyModule
     {

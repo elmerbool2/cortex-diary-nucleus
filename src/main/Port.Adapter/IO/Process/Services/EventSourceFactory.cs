@@ -1,10 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
-using works.ei8.EventSourcing.Client;
-using works.ei8.EventSourcing.Client.Out;
+using ei8.EventSourcing.Client;
+using ei8.EventSourcing.Client.Out;
 
-namespace works.ei8.Cortex.Diary.Nucleus.Port.Adapter.IO.Process.Services
+namespace ei8.Cortex.Diary.Nucleus.Port.Adapter.IO.Process.Services
 {
     public class EventSourceFactory : IEventSourceFactory
     {

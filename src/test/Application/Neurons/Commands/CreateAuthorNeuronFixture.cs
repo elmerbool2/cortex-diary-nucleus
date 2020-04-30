@@ -1,9 +1,9 @@
-﻿// TODO: using org.neurul.Common.Test;
-//using works.ei8.Cortex.Diary.Nucleus.Application.Neurons.Commands;
+﻿// TODO: using neurUL.Common.Test;
+//using ei8.Cortex.Diary.Nucleus.Application.Neurons.Commands;
 //using System;
 //using Xunit;
 
-//namespace works.ei8.Cortex.Diary.Nucleus.Application.Test.Neurons.Commands.CreateAuthorNeuronFixture.given
+//namespace ei8.Cortex.Diary.Nucleus.Application.Test.Neurons.Commands.CreateAuthorNeuronFixture.given
 //{
 //    public abstract class ConstructingContext : TestContext<CreateAuthorNeuron>
 //    {

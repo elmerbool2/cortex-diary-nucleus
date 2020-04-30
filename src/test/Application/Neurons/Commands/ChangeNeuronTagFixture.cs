@@ -1,10 +1,10 @@
-﻿using org.neurul.Common.Test;
-using works.ei8.Cortex.Diary.Nucleus.Application.Neurons;
-using works.ei8.Cortex.Diary.Nucleus.Application.Neurons.Commands;
+﻿using neurUL.Common.Test;
+using ei8.Cortex.Diary.Nucleus.Application.Neurons;
+using ei8.Cortex.Diary.Nucleus.Application.Neurons.Commands;
 using System;
 using Xunit;
 
-namespace works.ei8.Cortex.Diary.Nucleus.Application.Test.Neurons.Commands.ChangeNeuronTagFixture.given
+namespace ei8.Cortex.Diary.Nucleus.Application.Test.Neurons.Commands.ChangeNeuronTagFixture.given
 {
     public abstract class ConstructingContext : TestContext<ChangeNeuronTag>
     {

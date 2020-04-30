@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
-using works.ei8.Cortex.Diary.Common;
+using ei8.Cortex.Diary.Common;
 
-namespace works.ei8.Cortex.Diary.Nucleus.Application
+namespace ei8.Cortex.Diary.Nucleus.Application
 {
     internal static class Extensions
     {

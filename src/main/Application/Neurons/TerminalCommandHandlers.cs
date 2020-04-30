@@ -1,15 +1,15 @@
 ﻿using CQRSlite.Commands;
 using CQRSlite.Domain;
-using org.neurul.Common.Domain.Model;
-// TODO: using org.neurul.Common.Events;
-using works.ei8.Cortex.Diary.Nucleus.Application.Neurons.Commands;
+using neurUL.Common.Domain.Model;
+// TODO: using neurUL.Common.Events;
+using ei8.Cortex.Diary.Nucleus.Application.Neurons.Commands;
 using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace works.ei8.Cortex.Diary.Nucleus.Application.Neurons
+namespace ei8.Cortex.Diary.Nucleus.Application.Neurons
 {
     //public class TerminalCommandHandlers :
     //    ICancellableCommandHandler<CreateTerminal>,

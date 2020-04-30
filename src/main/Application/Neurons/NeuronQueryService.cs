@@ -1,15 +1,15 @@
-﻿using org.neurul.Common.Domain.Model;
-using org.neurul.Common.Http;
+﻿using neurUL.Common.Domain.Model;
+using neurUL.Common.Http;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-using works.ei8.Cortex.Diary.Common;
-using works.ei8.Cortex.Graph.Client;
-using works.ei8.Cortex.Diary.Nucleus.Application;
+using ei8.Cortex.Diary.Common;
+using ei8.Cortex.Graph.Client;
+using ei8.Cortex.Diary.Nucleus.Application;
 
-namespace works.ei8.Cortex.Diary.Nucleus.Application.Neurons
+namespace ei8.Cortex.Diary.Nucleus.Application.Neurons
 {
     public class NeuronQueryService : INeuronQueryService
     {

@@ -2,14 +2,14 @@
 using Moq;
 using Nancy;
 using Nancy.Testing;
-using org.neurul.Common.Test;
-using works.ei8.Cortex.Diary.Nucleus.Application.Neurons.Commands;
+using neurUL.Common.Test;
+using ei8.Cortex.Diary.Nucleus.Application.Neurons.Commands;
 using System;
 using System.Threading;
 using System.Threading.Tasks;
 using Xunit;
 
-namespace works.ei8.Cortex.Diary.Nucleus.Port.Adapter.In.Api.Test.TerminalModuleFixture.given
+namespace ei8.Cortex.Diary.Nucleus.Port.Adapter.In.Api.Test.TerminalModuleFixture.given
 {
     public abstract class Context : TestContext<Browser>
     {

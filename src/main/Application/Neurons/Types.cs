@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace works.ei8.Cortex.Diary.Nucleus.Application.Neurons
+namespace ei8.Cortex.Diary.Nucleus.Application.Neurons
 {
     public struct Messages
     {

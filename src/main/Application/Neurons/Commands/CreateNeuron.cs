@@ -1,9 +1,9 @@
 ﻿using CQRSlite.Commands;
 using Newtonsoft.Json;
-using org.neurul.Common.Domain.Model;
+using neurUL.Common.Domain.Model;
 using System;
 
-namespace works.ei8.Cortex.Diary.Nucleus.Application.Neurons.Commands
+namespace ei8.Cortex.Diary.Nucleus.Application.Neurons.Commands
 {
     public class CreateNeuron : ICommand
     {

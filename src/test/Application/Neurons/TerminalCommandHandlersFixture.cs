@@ -2,17 +2,17 @@
 //using CQRSlite.Domain.Exception;
 //using CQRSlite.Events;
 //using Moq;
-//using org.neurul.Common.Events;
-//using works.ei8.Cortex.Diary.Nucleus.Application.Neurons;
-//using works.ei8.Cortex.Diary.Nucleus.Application.Neurons.Commands;
-//using works.ei8.Cortex.Diary.Nucleus.Domain.Model.Neurons;
+//using neurUL.Common.Events;
+//using ei8.Cortex.Diary.Nucleus.Application.Neurons;
+//using ei8.Cortex.Diary.Nucleus.Application.Neurons.Commands;
+//using ei8.Cortex.Diary.Nucleus.Domain.Model.Neurons;
 //using System;
 //using System.Collections.Generic;
 //using System.Linq;
 //using System.Threading.Tasks;
 //using Xunit;
 
-//namespace works.ei8.Cortex.Diary.Nucleus.Application.Test.Neurons.TerminalCommandHandlersFixture.given
+//namespace ei8.Cortex.Diary.Nucleus.Application.Test.Neurons.TerminalCommandHandlersFixture.given
 //{
 //    public abstract class TerminalCommandHandlerConstructingContext<TCommand> : ConstructingContext<Terminal, TerminalCommandHandlers, TCommand> where TCommand : ICommand
 //    {

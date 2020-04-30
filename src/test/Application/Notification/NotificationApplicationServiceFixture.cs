@@ -1,16 +1,16 @@
 ﻿// TODO: using Moq;
-//using works.ei8.Cortex.Diary.Nucleus.Application.Notification;
-//using works.ei8.Cortex.Diary.Nucleus.Domain.Model.Neurons;
-//using works.ei8.Cortex.Diary.Nucleus.Port.Adapter.IO.Persistence.Events;
-//using org.neurul.Common.Events;
-//using org.neurul.Common.Test;
+//using ei8.Cortex.Diary.Nucleus.Application.Notification;
+//using ei8.Cortex.Diary.Nucleus.Domain.Model.Neurons;
+//using ei8.Cortex.Diary.Nucleus.Port.Adapter.IO.Persistence.Events;
+//using neurUL.Common.Events;
+//using neurUL.Common.Test;
 //using System;
 //using System.Collections.Generic;
 //using System.Linq;
 //using System.Threading.Tasks;
 //using Xunit;
 
-//namespace works.ei8.Cortex.Diary.Nucleus.Application.Test.Notification.NotificationApplicationServiceFixture.given
+//namespace ei8.Cortex.Diary.Nucleus.Application.Test.Notification.NotificationApplicationServiceFixture.given
 //{
 //    public abstract class Context : TestContext<NotificationApplicationService>
 //    {

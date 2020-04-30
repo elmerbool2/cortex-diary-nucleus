@@ -1,13 +1,13 @@
 ﻿using CQRSlite.Commands;
 using Nancy;
 using Nancy.Security;
-using org.neurul.Common.Domain.Model;
-using works.ei8.Cortex.Diary.Nucleus.Application.Neurons.Commands;
-using works.ei8.Cortex.Diary.Nucleus.Port.Adapter.Common;
+using neurUL.Common.Domain.Model;
+using ei8.Cortex.Diary.Nucleus.Application.Neurons.Commands;
+using ei8.Cortex.Diary.Nucleus.Port.Adapter.Common;
 using System;
 using System.Linq;
 
-namespace works.ei8.Cortex.Diary.Nucleus.Port.Adapter.In.Api
+namespace ei8.Cortex.Diary.Nucleus.Port.Adapter.In.Api
 {
     public class NeuronModule : NancyModule
     {

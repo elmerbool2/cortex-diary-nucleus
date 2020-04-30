@@ -2,16 +2,16 @@
 using CQRSlite.Routing;
 using Nancy;
 using Nancy.TinyIoc;
-using org.neurul.Common.Http;
-using org.neurul.Cortex.Client.In;
+using neurUL.Common.Http;
+using neurUL.Cortex.Client.In;
 using System;
-using works.ei8.Cortex.Diary.Nucleus.Application;
-using works.ei8.Cortex.Diary.Nucleus.Application.Neurons;
-using works.ei8.Cortex.Diary.Nucleus.Port.Adapter.IO.Process.Services;
-using works.ei8.Data.Aggregate.Client.In;
-using works.ei8.Data.Tag.Client.In;
+using ei8.Cortex.Diary.Nucleus.Application;
+using ei8.Cortex.Diary.Nucleus.Application.Neurons;
+using ei8.Cortex.Diary.Nucleus.Port.Adapter.IO.Process.Services;
+using ei8.Data.Aggregate.Client.In;
+using ei8.Data.Tag.Client.In;
 
-namespace works.ei8.Cortex.Diary.Nucleus.Port.Adapter.In.Api
+namespace ei8.Cortex.Diary.Nucleus.Port.Adapter.In.Api
 {
     public class CustomBootstrapper : DefaultNancyBootstrapper
     {

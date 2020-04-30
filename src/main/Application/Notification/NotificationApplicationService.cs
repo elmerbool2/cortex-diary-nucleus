@@ -14,16 +14,16 @@
 // 
 // Modifications copyright(C) 2020 ei8/Elmer Bool
 
-using org.neurul.Common.Domain.Model;
-using org.neurul.Common.Http;
+using neurUL.Common.Domain.Model;
+using neurUL.Common.Http;
 using System;
 using System.Threading;
 using System.Threading.Tasks;
-using works.ei8.Cortex.Diary.Common;
-using works.ei8.EventSourcing.Client;
-using works.ei8.EventSourcing.Client.Out;
+using ei8.Cortex.Diary.Common;
+using ei8.EventSourcing.Client;
+using ei8.EventSourcing.Client.Out;
 
-namespace works.ei8.Cortex.Diary.Nucleus.Application.Notification
+namespace ei8.Cortex.Diary.Nucleus.Application.Notification
 {
     public class NotificationApplicationService : INotificationApplicationService
     {

@@ -1,11 +1,11 @@
-﻿// TODO: using org.neurul.Common.Test;
-//using works.ei8.Cortex.Diary.Nucleus.Application.Neurons.Commands;
-//using works.ei8.Cortex.Diary.Nucleus.Domain.Model.Neurons;
+﻿// TODO: using neurUL.Common.Test;
+//using ei8.Cortex.Diary.Nucleus.Application.Neurons.Commands;
+//using ei8.Cortex.Diary.Nucleus.Domain.Model.Neurons;
 //using System;
 //using System.Linq;
 //using Xunit;
 
-//namespace works.ei8.Cortex.Diary.Nucleus.Application.Test.Neurons.Commands.CreateTerminalFixture.given
+//namespace ei8.Cortex.Diary.Nucleus.Application.Test.Neurons.Commands.CreateTerminalFixture.given
 //{
 //    public abstract class ConstructingContext : TestContext<CreateTerminal>
 //    {
