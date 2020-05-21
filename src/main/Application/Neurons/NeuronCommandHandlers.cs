@@ -89,26 +89,15 @@ namespace ei8.Cortex.Diary.Nucleus.Application.Neurons
 
         public async Task Handle(DeactivateNeuron message, CancellationToken token = default(CancellationToken))
         {
-            //AssertionConcern.AssertArgumentNotNull(message, nameof(message));
+            AssertionConcern.AssertArgumentNotNull(message, nameof(message));
 
-            //var eventSource = this.eventSourceFactory.CreateEventSource(message.AvatarId);
-            //await this.userRepository.Initialize(message.AvatarId);
-            //await this.layerPermitRepository.Initialize(message.AvatarId);
-
-            //// TODO: Add TDD test
-            //var author = await NeuronCommandHandlers.GetValidatedAuthorUser(message.SubjectId, eventSource.Session, this.userRepository, this.layerPermitRepository, token);
-            //Neuron neuron = await eventSource.Session.Get<Neuron>(message.Id, nameof(neuron), message.ExpectedVersion, token);
-            //Neuron layer = await eventSource.Session.GetOrDefaultIfGuidEmpty(
-            //        neuron.LayerId,
-            //        nameof(layer),
-            //        Neuron.RootLayerNeuron,
-            //        cancellationToken: token
-            //        );
-
-            //neuron.Deactivate(layer, author);
-            //await eventSource.Session.Commit(token);
-
-            await Task.CompletedTask;
+            await this.neuronClient.DeactivateNeuron(
+                this.settingsService.CortexInBaseUrl + "/",
+                message.Id.ToString(),
+                message.ExpectedVersion,
+                message.AuthorId.ToString(),
+                token
+                );            
         }
     }
 }
