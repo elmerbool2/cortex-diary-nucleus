@@ -29,10 +29,12 @@ namespace ei8.Cortex.Diary.Nucleus.Port.Adapter.In.Api
             container.Register<IHandlerRegistrar, Router>(ipb);
             container.Register<IRequestProvider, RequestProvider>();
             container.Register<INeuronClient, HttpNeuronClient>();
+            container.Register<ITerminalClient, HttpTerminalClient>();
             container.Register<ITagClient, HttpTagClient>();
             container.Register<IAggregateClient, HttpAggregateClient>();
             container.Register<ISettingsService, SettingsService>();
             container.Register<NeuronCommandHandlers>();
+            container.Register<TerminalCommandHandlers>();
 
             // TODO: necessary?
             var ticl = new TinyIoCServiceLocator(container);
